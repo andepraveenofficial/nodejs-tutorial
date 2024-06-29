@@ -1,0 +1,16 @@
+{
+  "name": "02-nodemon-setup",
+  "version": "1.0.0",
+  "description": "* __nodemon__ is third-party package to start the server automatically.\r * when you save the code server will restart automatically",
+  "main": "index.js",
+  "scripts": {
+       "start": "node index.js",
+       "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
