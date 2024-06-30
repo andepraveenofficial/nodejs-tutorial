@@ -1,10 +1,13 @@
 const message = "Hello World";
 const name = "Ande Praveen";
 
-// Export Module
-// The module.exports is a special object included in every Javascript file in the Node JS application by default.
+// Export Module -> Named
+/*
+The module.exports is a special object included in every Javascript file in the NodeJS application by default.
+*/ 
+
 // console.log(module);
-// Named Export
+
 module.exports.message = message;
 module.exports.name = name;
 

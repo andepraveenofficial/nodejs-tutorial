@@ -6,7 +6,6 @@
 ## Index
 * Introduction 
 * Module
-* ES6 Export/Import
 
 </details>
 
@@ -17,6 +16,8 @@
 
 ## Introduction
 NodeJS is a Javascript environment that executes Javascript code outside a web browser.
+
+![NodeJS](./Assets/introduction/01-NodeJS.png)
 
 ### Advantages
 * Cross Platform (Windows, Linux, MacOS...etc)
@@ -40,9 +41,9 @@ In Node JS, each Javascript file is treated as a separate module.
 
 ### Default
 * The `module.exports` is a special object included in every Javascript file in the Node JS application by default.
-* To import a module which is the local file, use the **require()** function with the relative path of the module(file name).
+* To import a module which is the local file, use the __require()__ function with the relative path of the module(fileName).
 
-```js
+```js FirstModule.js
 let FirstModule = () => {
     return "I am First Module"
 };
@@ -60,9 +61,9 @@ console.log(FirstModule());  // I am First Module
 ```
 
 ### Named
-We can have multiple named exports per module.
+You can export multiple items from a single file and import only what you need in another file.
 
-```js 
+```js Utils.js
 
 // Functions
 const FirstFunction = () => {
@@ -96,14 +97,15 @@ console.log(SecondFunction());  // I am Second Function
 <summary>ES6 Export/Import</summary>
 
 ## ES6 Export/Import
-Modern JS Module are known as ES6 Modules.
-The 'export' and 'import' keywords are introduced for exporting and importing one or more members in a module.
+* Modern JS Module are known as ES6 Modules.
+The `export` and `import` keywords are introduced for exporting and importing one or more members in a module.
 
 1. Default 
 2. Named
 
 ### Default 
 Here we use file name extension as `.mjs`.
+
 ```js App.mjs
 // Import
 import FirstModule from "./FirstModule.mjs";
@@ -148,9 +150,8 @@ console.log(SecondFunction());  // I am Second Function
 
 
 ### Without mjs
-`npm init -y`
-
-Add type in the `package.json` file.
+* `npm init -y`
+* Add type in the `package.json` file.
 ```json
 {
   "type": "module"

@@ -14,7 +14,7 @@
 * Start the Application : `nodemon index.js`
 
 ### Change the Scripts
-* To avoid typing `nodemon index.js` every time, you can modify the scripts section of your package.json file.
+* To avoid typing `nodemon index.js` every time, you can modify the scripts section of your `package.json` file.
 
 ```json
 "scripts": {

@@ -12,5 +12,5 @@ function ratioAndFactorial(firstNumber, secondNumber, thirdNumber) {
   return myObject;
 }
 
-// Default Exporting
+// Default Export
 module.exports = ratioAndFactorial;
