@@ -1,0 +1,19 @@
+{
+  "name": "express-rate-limit",
+  "version": "1.0.0",
+  "description": "Express-rate-limit is a tool that helps protect your Express app from too many requests being made too quickly (like someone trying to overload your server). It works by limiting how many times a user can hit your server within a certain time frame.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "nodemon": "^3.1.4"
+  }
+}

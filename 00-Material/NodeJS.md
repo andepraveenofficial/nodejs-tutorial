@@ -6,6 +6,7 @@
 ## Index
 * Introduction 
 * Module
+* ES6 Export/Import
 
 </details>
 
@@ -15,7 +16,9 @@
 <summary>Introduction</summary>
 
 ## Introduction
-NodeJS is a Javascript environment that executes Javascript code outside a web browser.
+- NodeJS is a Javascript runtime environment that executes Javascript code outside a web browser.
+- With Node.js, JavaScript can run anywhere, including servers, desktops, and embedded systems.
+- Node.js is a non-blocking I/O.
 
 ![NodeJS](./Assets/introduction/01-NodeJS.png)
 
@@ -24,6 +27,33 @@ NodeJS is a Javascript environment that executes Javascript code outside a web b
 * Open Source
 * Huge number of third-party packages
 * Huge Community
+
+### JavaScript Engines
+Every browser has its own JavaScript engine:
+   1. Google Chrome → V8 Engine
+   2. Firefox → SpiderMonkey
+
+### What is Node.js?
+- Node.js is built on Chrome’s V8 JavaScript engine.
+- It is cross-platform, running on Windows, macOS, and Linux.
+- Maintained by the OpenJS Foundation, which continuously adds new features.
+- Executes JavaScript code outside the web browser.
+- Allows JavaScript to run everywhere.
+-  Node.js features an event-driven architecture that supports asynchronous (non-blocking) I/O operations.
+Known for its high performance and scalability due to its non-blocking, event-driven nature.
+- Node.js is popular because of its event-driven architecture.
+
+### History of NodeJS
+- Developed by Ryan Dahl in 2009.
+- Originally named "web.js", as it was designed for web servers.
+- Later renamed "Node.js", as it became useful beyond just web servers.
+- JavaScript requires a JS engine to execute, and Node.js provides this capability outside browsers.
+- To run a javascript you need a JS Engine
+- You cannot run any Javascript code without JSEngine
+
+### npm
+- npm is a packages manager for JavaScript.
+- It serves as a central registry where developers can publish and install packages.
 
 </details>
 
