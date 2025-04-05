@@ -1,0 +1,17 @@
+@baseUrl=http://localhost:5000
+
+### 01 Get AllUserData
+GET {{baseUrl}}/admin/getAllUserData
+
+### 01 Get AllUserData
+GET {{baseUrl}}/admin/deleteUser
+
+### 01 Get User
+GET {{baseUrl}}/user
+
+### 01 Get User
+GET {{baseUrl}}/user/login
+
+### 01 getUserdata
+GET {{baseUrl}}/getUserData
+

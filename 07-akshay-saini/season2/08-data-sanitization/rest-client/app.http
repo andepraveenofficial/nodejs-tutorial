@@ -1,0 +1,52 @@
+@baseUrl = http://localhost:5000
+
+### 01 Signup
+POST {{baseUrl}}/signup
+Content-Type:  application/json
+
+{
+  "firstName":"Andeee",
+  "lastName":"Praveen",
+  "emailId":"dhoni1@gmail.com",
+  "password":"password123",  
+  "age":38,
+  "gender":"male"
+}
+
+### 01 Signup - missing required field
+POST {{baseUrl}}/signup
+Content-Type:  application/json
+
+{
+  "lastName":"MS2",
+  "emailId":"dhoni@gmail.com",
+  "password":"password123",  
+  "age":38,
+  "gender":"male"
+}
+
+### 01 Get User
+GET {{baseUrl}}/user
+Content-Type:  application/json
+
+{
+  "emailId":"dhoni1@gmail.com"
+}
+
+### 01 Delete User
+DELETE {{baseUrl}}/user
+Content-Type:  application/json
+
+{
+  "userId":"1233434878347"
+}
+
+### 01 Update User
+@userId=67ed9b20cce54a73a83ee1f4
+PATCH {{baseUrl}}/user?userId={{userId}}
+Content-Type:  application/json
+
+{
+  "about":"I am praveens wife",
+  "gender":"female"
+}

@@ -1,0 +1,42 @@
+@baseUrl = http://localhost:5000
+
+### 01 Signup
+POST {{baseUrl}}/signup
+Content-Type:  application/json
+
+{
+  "firstName":"Dhoni",
+  "lastName":"MS",
+  "emailId":"dhoni@gmail.com",
+  "password":"password123",  
+  "age":38,
+  "gender":"male"
+}
+
+### 01 Get User
+POST {{baseUrl}}/user
+Content-Type:  application/json
+
+{
+  "emailId":"dhoni@gmail.com"
+}
+
+### 01 Delete User
+DELETE {{baseUrl}}/user
+Content-Type:  application/json
+
+{
+  "userId":"1233434878347"
+}
+
+### 01 Update User
+DELETE {{baseUrl}}/user
+Content-Type:  application/json
+
+{
+  "userId":"1233434878347",
+  "userObj":{
+    "firstName":"Kajal",
+    "lastName":"Agarwal"
+  }
+}
