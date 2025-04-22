@@ -5,6 +5,7 @@ const jwt = require("jsonwebtoken");
 const connectDB = require("./config/mongodb")
 const User = require("./model/User");
 const { validateSignUpData } = require('./utils/validation');
+const {userAuth} = require("./middlewares/auth")
 const app = express();  // It creates the new web-server
 
 // This middleware activate for all the routes
@@ -126,13 +127,17 @@ app.post("/login", async (req, res) => {
       res.status(404).send("Invalid Credentials"); // this is Information Leakage
     }
     else{
-      const isMatch = await bcrypt.compare(password, user.password);
+      // const isMatch = await bcrypt.compare(password, user.password);  // move to mongoose handler methods
+      const isMatch = await user.validatePassword(password);
       if (isMatch){
 
         // Create a JWT Token
         // Add the token to cookie and send response back to the user
-        const token = await jwt.sign({_id:user._id}, "mysecretkey")
-        res.cookie("token", token)
+        // const token = await jwt.sign({_id:user._id}, "mysecretkey", {expiresIn:"1d"})  // this code move to mongoose handler methods
+        // res.cookie("token", token)
+
+        const token = await user.getJWT();
+        res.cookie("token", token, {expires: new Date(Date.now() + 24*60*60*1000)}) // Cookie Expires in 1 day
         res.send("Login Success")
       }
       else{
@@ -145,9 +150,9 @@ app.post("/login", async (req, res) => {
   }
 })
 
-app.get("/profile", async (req, res) => {
+app.get("/profile", userAuth, async (req, res) => {
+  /*
   const cookies = req.cookies
-
   const {token} = cookies
   // validate my token
 
@@ -160,8 +165,17 @@ app.get("/profile", async (req, res) => {
   console.log("Logged in user is", _id);
 
   const user = await User.findById(_id);
+  */
+  const user = req.user;
   console.log(user);
-  res.send("Profile")
+  res.send(user )
+})
+
+app.post("/sendConnectionRequest", userAuth, async (req, res) => {
+  console.log("Sending Connection Request");
+  const user = req.user;
+  res.send(user.firstName + " " + "Sent the connection request")
+  return;
 })
 
 connectDB().then(() => {

@@ -1,0 +1,8 @@
+### Variables
+@baseUrl = http://localhost:5000
+
+### Home
+GET {{baseUrl}}
+
+### Payment
+POST {{baseUrl}}/payment/create

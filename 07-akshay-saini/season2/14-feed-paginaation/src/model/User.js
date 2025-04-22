@@ -42,13 +42,8 @@ const userSchema = new mongoose.Schema(
     },
     gender:{
       type: String,
-      // Custom Validation
-      validate(value){
-        if(!["male", "female", "other"].includes(value)){
-          throw new Error("Gender data is not valid")
-        }
-      }
-    },
+      enum:{values:["male", "female", "other"], message:`{VALUE} is incorrect gender type`},
+      },
     photoUrl:{
       type: String,
       default:"https://tse1.mm.bing.net/th?id=OIP.F_R5vSp2LEiLzJqaQuB99wAAAA&pid=Api&P=0&h=180",
